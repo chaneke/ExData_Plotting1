@@ -4,10 +4,10 @@
 ## please go to initialize.R script to check the common code used to download, unzip, create and subset the data frame
 source("initialize.R")
 ## Sending to PNG file
-png(paste(getwd(),"/plot2.png",sep=""))
+png(paste(getwd(),"/plot2.png",sep=""),width=480, height= 480)
 ## Plotting
 if(exists("dataFrameSubset")){
-    barplot(dataFrameSubset$Global_active_power, main="Global Active Power",xlab="Global Active Power (kilowatts)",ylab="Frequency")
+    plot(dataFrameSubset$DateTime, dataFrameSubset$Global_active_power, type= "l", lwd=1, ylab= "Global Active Power (kilowatts)", xlab="")
 }
 dev.off()
 
